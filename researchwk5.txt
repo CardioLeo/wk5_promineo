@@ -12,3 +12,30 @@ What is the relationship between a Class and an Object?
 What is an exception and what are best practices for handling them?
 
 What is your favorite thing you learned this week?
+
+
+
+---
+
+
+1.
+
+The four pillars of Object-Oriented Programming are 1st, Abstraction, 2nd, Encapsulation, 3rd, Inheritance, 4th, Polymorphism.
+
+Abstraction is basically like reframing code in general terms, like the medieval or scientific concepts of genera and species, general and special, etc. The general is an abstraction, in this sense, which includes many special instances.
+
+A book I picked up on Fortran is titled, "Abstracting Away the Machine," and while I think this "abstracting" is not quite the same abstraction as the first pillar of Object Oriented Programming (OOP), it is similar in several respects.
+
+For one, Fortran allowed programmers to work with different machines without having to know the machine specific coding-language of each machine. To illustrate from what I understand, it had been the case before Fortran that a programmer working with different machines would have to write one program for machine a (in the corresponding language for a), another program for machine b (in the corresponding language for b), and yet a third program for machine c (in the corresponding language for c).
+
+After the invention of Fortran, ideally at least, programmers could approach their task more efficiently. Instead of having to know and write working programs in the corresponding languages for machines a, b, and c, programmers only needed to know the general shape of the program they needed to write.
+
+That is, they needed to know how to write a FORTRAN program (a program comparatively on the general level, written in a higher level coding language) rather than how to write in, for instance, binary, or whatever very specific language a specific machine was built to have work in its very hardware (this would be a low-level coding language, the species under the genera).
+
+To move away from Fortran, and back towards OOP, we can illustrate the idea of abstraction in coding more closely with the concepts of classes and objects. Classes are the like the "genera" and objects are the "species." By using Object Oriented Programming, a programmer can save time in coding in a way analogous to using functions. Functions are written out one time and then can be called multiple times throughout the rest of the program. Likewise, classes can be declared one time and then instantiated many different times and ways after their initial declaration. 
+
+Another example that is helpful comes to mind. I was discussing Platonism with my brother one time when he said that what I was describing with Platonism reminded him of concepts in programming. Specifically, the way that, in Platonism, ideas are instantiated in particular things. To take an instance, the idea of a triangle is instantiated in the instance of a particular physical triangle or depiction of a triangle.
+
+It seems to be that the deeper one goes into coding, the more one finds linguistic, logical, genealogical and philosophical realities embodied in (can we say, "hard-coded" into?) programming concepts and constructs. In this case, "abstraction" as a pillar in object oriented programming.
+
+It is a different abstraction from that about Fortrain, as I said, or Platonism, for that matter. But it seems worthwhile to me to draw these out specifically because these examples might just help us to think about how tech use can contribute to "forgetting one has a body", and perhaps it is an awareness of this that can help to avoid that forgetfulness.
