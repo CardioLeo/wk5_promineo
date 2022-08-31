@@ -1,0 +1,14 @@
+# Author: William Z Chadwick
+# Date Created: 08/30/2022
+# Date Modified: 08/30/2022
+# Description: A place for my preparatory notes for Week 5 Research assignment
+
+Prompts
+
+What are the four pillars of Object-Oriented Programming? Explain each pillar.
+
+What is the relationship between a Class and an Object?
+
+What is an exception and what are best practices for handling them?
+
+What is your favorite thing you learned this week?
