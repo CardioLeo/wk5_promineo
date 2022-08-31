@@ -62,6 +62,21 @@ abstraction, animal; inherits communication;
 
 animals all inherit communication, but communication is polymorphic because communication can be barks, chirps, or human speech, just as examples.
 
+abstraction
+encapuslation
+inheritance
+polymorphism
+
+abstraction
+encapsulation
+inheritance
+polymorphism
+
+abstraction
+encapsulation
+inheritance
+polymorphism
+
 ---
 
 using classes;
