@@ -109,5 +109,54 @@ C.
 
 class student {
 	constructor(firstName, lastName, phoneNumber, grade) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNumber = phoneNumber;
+		this.grade = grade;
+}
+
+	introduce() {
+		//a method is a function that belongs to an object or a class
+		console.log(`$(this.firstName) $(lastName) can be reached at $(this.phoneNumber)`);
 }
 }
+
+let student1 = new Student("Tom", "Sawyer", "623555555", "A");
+let student2 = new Student("Sam", "Smith", "4805555555", "A");
+
+student1.introduce();
+student2.introduce();
+
+//gives error, because left out this.lastName, "this. keyword"
+
+//console.log........$(this.lastName)
+
+parameters help us out in the class declaration.
+
+//
+//
+//
+
+let student = new Student();
+student.firstName = "Tommy";
+student.lastname = "Smith";
+
+//^^^^^this is a lot more code than just passing the values into a constructor.
+
+//how do we know when to create a class?
+
+//**each class should be in charge of one thing.**
+
+//we instantiate an instance of our class
+
+//programming and platonism; structural platonism, methodological platonism?
+
+end of video 2;
+
+---
+
+---
+
+video 3
+
+
