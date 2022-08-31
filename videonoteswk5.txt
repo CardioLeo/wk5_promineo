@@ -1,0 +1,113 @@
+# Author: William Z Chadwick
+# Date Created: 08/30/2022
+# Date Modified: 08/30/2022
+# Description: A place for my notes on the week 5 videos
+
+---
+
+object oriented programming
+
+video 1
+
+---
+
+JavaScript
+
+traditionally a functional programming language, until ECMA6/ES6
+
+made Object Oriented Programming accessible in JavaScript
+
+objects is how we already think of things in human thinking
+
+properties; [philosophical] attributes;
+
+objects
+
+dvd players as objects
+
+-
+-
+-
+-
+-
+
+
+dvds as objects
+-
+-
+-
+
+---
+
+let objects = ( attributes + functionality );
+
+---
+
+4 pillars of object oriented programming:
+
+
+1 Abstraction
+
+Abstraction example: motion; a vehicle moves; all vehicles move;
+
+2 encapsulation 
+
+hides details of how it works; driving a car, hides the data about how the car works; this suggests
+
+3 inheritance
+
+abstraction, animal; inherits communication; 
+
+4 polymorphism
+
+animals all inherit communication, but communication is polymorphic because communication can be barks, chirps, or human speech, just as examples.
+
+---
+
+using classes;
+
+end of the first video.
+
+---
+
+---
+
+video 2
+
+classes video;
+
+grouping attributes and functionality together; variables and methods; "student"
+
+a class that represents a student
+
+//coding examples begin here; camel case for most conventions; Pascal case is used for classes; Student (?I think?)
+
+A.
+
+class student {
+	constructor() {
+		this.firstName = "Sam";
+		this.lastName = "Smith";
+		this.phoneNumber = "4805555555";
+		this.grade = "A";
+	}
+
+}
+
+B.
+
+class student {
+	constructor(firstName, lastName, phoneNumber, grade) {
+		this.firstName = "Sam";
+		this.lastName = "Smith";
+		this.phoneNumber = "4805555555";
+		this.grade = "A";
+	}
+}
+
+C.
+
+class student {
+	constructor(firstName, lastName, phoneNumber, grade) {
+}
+}
