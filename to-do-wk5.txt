@@ -5,12 +5,12 @@
 
 ---
 
-videos
-research
-coding assignment
-career services
-linkedin posts
-class attendance
+videos 
+research /
+coding assignment 
+career services 
+linkedin posts /
+class attendance /
 
 ---
 
