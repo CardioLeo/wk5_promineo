@@ -46,3 +46,257 @@ object["propertyname"] => why use this syntax?
 (1), B will work if you have a space in the property, though shouldn't be a space; this is also if you know the property you are trying to reach, by name.
 
 (2), B is a way to reach via variable without necessarily knowing the specific name of the property; say you need to loop through it? can use i, as in looping iterations. if you don't know the names of the properties you can do this
+
+---
+
+object literal syntax:
+
+let spaceship = {
+	"Fuel Type": "Turbo Fuel",
+	homePlanet: ["Earth", "Mars"],
+	color: "silver",
+	"Secret Mission": "Discover life outside of Earth."
+};
+
+spaceship.color = "glorious gold";
+spaceship.
+
+spaceship.numEngines = 2;
+
+delete spaceship["Secret Mission"];
+
+console.log(spaceship);
+
+const alienShip = {
+	takeOff() {
+		console.log("Spim... Borp... Glix... Blastoff!");
+	}
+}
+
+console.log(alienShip.takeOff());
+
+spaceship.crew = {
+	captain: {
+		name: "Sandra",
+		degree: "Computer Engineering",
+		"favorite foods": ["cookies", "cake", "candy", "spinach"]
+	}
+}
+
+// spaceship => object
+	// crew => property of spaceship; object
+		// captain => property of crew; object
+			// name, degree and "favorite foods" ==> properties of captain
+
+console.log(spaceship.crew.captain["favorite foods"][2]); // outputs "candy";
+
+//****** objects are passed by reference, not value
+
+let spaceship1 = {
+	"Fuel Type": "Turbo Fuel",
+	homePlanet: "Earth"
+};
+
+function greenEnergy(obj) {
+	obj["Fuel Type"]
+}
+
+greenEnergy(spaceship1);
+
+//
+//
+//
+//
+// notes interupted by crying kids; the world ended two (2) whole times;
+//
+//
+//
+//
+
+
+let spaceship = {
+	crew: {
+		captain: {
+			name: "Lily",
+			degree: "Computer Engineering"
+			}
+		"chief officer": {
+			name: "Dan",
+			degree: "Aerosapce Engineering"
+			}
+		medic: {
+			name: "Clementine",
+			degree: "Physics"
+			}
+		translator: {
+			name: "Shauna",
+			degree: "Conservation Science"
+			}
+	}
+}
+
+Object.keys, values, entries
+
+object.keys(obj) - returns an array of keys
+
+object.values(obj) - returns an array of values
+
+object.entries(obj) - returns an array of [key, value] pairs
+
+---
+
+you might not need a class; might need simple function to return object;
+
+const robotFactory = (first, last) => {
+	return {
+		firstName: first,
+		lastName: last,
+		};
+};
+
+const fullName = robotFactory('frank', 'stepanski');
+console.log(fullName);
+
+class Book {
+	constructor(title, author, year, isRead=false) {
+		this.title = title;
+		this.author = author;
+		this.year = year;
+		this.isRead = isRead;
+	}
+}
+
+const book = new Book ("Dune", "Frank Herbert", 1965);
+
+console.log(book.title);
+
+// dynamic part of javascript working with html, competeing pieces of js and html; ways to work them together; working JS over onto Html dynamically, programmatically; we will get to this later.
+
+class Book {
+	constructor(title, author, year, isRead=false) {
+		this.title = title;
+		this.author = author;
+		this.year = year;
+		this.isRead = isRead;
+	}
+}
+
+const book = new Book ("Dune", "Frank Herbert", 1965);
+
+console.log(book.title);
+
+//
+//
+//
+//
+//
+//
+//
+
+class Book {
+	constructor(title, author, year, isRead=false) {
+		this._title = title; // _ means they are "private"
+		this._author = author;
+		this._year = year;
+		this._isRead = isRead;
+	}
+	get title() {
+		return this._title;
+	}
+        get author() {
+                return this._author;
+        }
+        get year() {
+                return this._year;
+        }
+        get isRead() {
+                return this._isRead;
+        }
+}
+
+const book = new Book ("Dune", "Frank Herbert", 1965);
+
+console.log(book.title, book.author, book.year, book.isRead);
+
+---
+---
+---
+
+Inheritance;
+
+various forms of inheritance; taxonomy;
+
+class HospitalEmployee {
+	constructor(name) {
+		this._name = name;
+		this._remainingVacationDays = 20;
+	}
+	get name() {
+		return this._name;
+	}
+	get remainingVacationDays(daysOff) {
+		return this._remainingVacationDays -= daysOff;	
+	}
+
+}
+
+class Nurse extends HospitalEmployee {
+	constructor(name, certifications) {
+		super(name);
+		this._certifications = certifications;
+	}
+}
+
+//
+//
+//
+//
+
+
+// coding assignment;
+// create a menu app as seen in this week's video;
+
+
+// static start(){};
+
+class Menu {
+	static start() {
+		
+	}
+}
+
+class TaskList {
+	constructor() {
+		this._tasks = [];
+	}
+	createTask(newTask) {
+		this._tasks.push(newTask)
+			return newTask;
+	}
+	deleteTask(id) {
+		const found = this._tasks.find(task => this._tasks.id === Number(id));
+			if (found) {
+				const newTasks = this._tasks.filter(task => task._id !== found._id) this._tasks = [...newTasks];
+				return "Task deleted.";
+			}
+			return "Task id not found."
+	}
+}
+
+// "task text: > sleep"
+// create, view, and delete tasks
+// TaskList.filter(); deleting some item out of your task list. probably the cleanest way is to use ths filter
+
+// a. use at least one array.
+// b. use at least two classes.
+// c. you menu should have the options to create, view, and delete elements.
+
+// Stepanski will go over this next week. He says Do Not Hang Onto Your Assignment; he says submit it even if it is 50% done, rather than hanging onto it forever; if you hold onto it too long you won't be in pace with the class. This is really, really good to hear.
+
+// come back to assignments after you're done with the program -- do not wait to do it; do as much as possible as soon as possible and then move on!
+// don't be doing assignments from last week; if anything they'll have you update it at the end; if you get 50-70%, that will be good enough and they'll help you later, but just don't fall behind working on it.
+// middle and end of program are a lot more advanced topics, a lot harder to catch up.
+
+// follow Stepanski's examples. -- do we have access to these in more details? Or will I just have to piece together from my notes?
+
+// looking forward to it
