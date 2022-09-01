@@ -39,3 +39,7 @@ Another example that is helpful comes to mind. I was discussing Platonism with m
 It seems to be that the deeper one goes into coding, the more one finds linguistic, logical, genealogical and philosophical realities embodied in (can we say, "hard-coded" into?) programming concepts and constructs. In this case, "abstraction" as a pillar in object oriented programming.
 
 It is a different abstraction from that about Fortrain, as I said, or Platonism, for that matter. But it seems worthwhile to me to draw these out specifically because these examples might just help us to think about how tech use can contribute to "forgetting one has a body", and perhaps it is an awareness of this that can help to avoid that forgetfulness.
+
+2.
+
+My favorite thing I've learned this week is stuff about abstractions.
