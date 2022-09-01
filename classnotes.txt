@@ -1,0 +1,31 @@
+# Author: William Z Chadwick
+# Date Created: 08/30/2022
+# Date Modified: 08/30/2022
+# Description: A place for my notes from class.
+
+[class notes] Abstraction "generalize the implementation details" espresso vs drip vs keurig they can all make() cofee. Expose only what you need. "We don't really know how a car works unless we like cars and learn about it. We just put the gas in and go.] It's going to abstract away the details of how something works." [doesn't care how it works, only so long as it works for the desired goal/purpose.]
+
+encapsulation -- concepts change in different contexts. and so encapsulation meant different things in the 90s. before websites, phones, watches, and fridges had applications on them, encapsulation had a different context, though still related to OOP.
+
+1. Abstraction
+2. Encapsulation
+3. Inheritance [extension?]
+4. Polymorphism
+
+inheritance, applied taxonomy; vehicles; wheeled vehicles; classification of animals.
+
+helps reuse and share code.
+
+why reinvent the wheel. keep basic functionality already written out.
+
+Instructor Stepanski is not sure that Polymorphism can be used in JavaScript [I did find a link on Polymorphism in JS: https://linuxhint.com/javascript-polymorphism/#:~:text=Polymorphism%20in%20JavaScript%20refers%20to,object%20can%20have%20different%20behavior.]
+
+OOP
+
+Classes:
+
+allows us to structure our code:
+-"class is a "blueprint""
+-"Object is an instance or implementation of the blueprint"
+-"The blueprint is used to create an object."
+-"One blueprint can make an //infinite// number of objects."
