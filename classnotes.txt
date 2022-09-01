@@ -29,3 +29,20 @@ allows us to structure our code:
 -"Object is an instance or implementation of the blueprint"
 -"The blueprint is used to create an object."
 -"One blueprint can make an //infinite// number of objects."
+
+Object:
+the actual thing created by a class; object is instance of class; you can create an object without having a class first, but it is harder to create more of the same if you only have an object.
+
+never a property without a value; property must have some value; even if null.
+
+property is "a key-value pair."
+
+A. --dot-references
+object.propertyname => no spaces in key name; has to be exact property name
+
+B. --bracket-reference
+object["propertyname"] => why use this syntax?
+
+(1), B will work if you have a space in the property, though shouldn't be a space; this is also if you know the property you are trying to reach, by name.
+
+(2), B is a way to reach via variable without necessarily knowing the specific name of the property; say you need to loop through it? can use i, as in looping iterations. if you don't know the names of the properties you can do this
