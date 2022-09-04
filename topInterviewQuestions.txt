@@ -1,0 +1,17 @@
+# Author: William Z Chadwick
+# Date Created: 09/04/2022
+# Date Modified: 09/04/2022
+# Description: A place to compile interview notes and questions, Promineo Tech Wk 5
+
+Includes Below:
+
+Top 30 Linux Admin Interview Questions
+Source: https://www.linuxtechi.com/experience-linux-admin-interview-questions/
+
+Top 10ish C++ Interview Questions
+Source: https://www.interviewbit.com/cpp-interview-questions/
+
+Top 25 JavaScript Questions
+Source: https://www.dotnettricks.com/learn/javascript/javascript-interview-questions
+
+make flashcard decks for each of these?
