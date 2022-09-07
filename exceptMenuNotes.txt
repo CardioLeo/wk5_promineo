@@ -93,7 +93,18 @@ class Team {
 		if (player instanceof Player) {
 			this.players.push(player);
 		} else {
-			throw new Error("You can only add an instance of Player. Argument is not a player: ${}")
-		}
+			throw new Error("You can only add an instance of Player. Argument is not a player: ${player} ")
+		}                                                                                             
 	}
+	describe() {
+		return "${this.name} has ${this.players.length} players.";
+	}
+}
+
+class Menu {
+	constructor() {
+		this.teams = [];
+		this.selectedTeam = null;
+	}
+
 }
