@@ -20,8 +20,9 @@ class Book {
 }
 
 class Shelf {
-	constuctor(name) {
+	constuctor(name, position) {
 	this.name = name;
+	this.position = position;
 	this.shelf = [];
 	}
 	addBook(book) {
@@ -80,14 +81,7 @@ class Menu {
 	}
 	showShelfMenuOptions() {
 		return prompt(
-			"0) back" + "\n" +
-			"1) create book" + "\n" +
-			"2) delete book" + "\n" +
-			"3) list books" + "\n" +
-			"4) list books with descriptions" + "\n" +
-			"5) list book description" + "\n" +
-			"---------------" + "\n" +
-			"${shelfInfo}";
+			`0) back\n1) create book\n2) delete book\n3) list books\n4) list books with descriptions\n5) list book description\n---------------\n\${shelfInfo}`
 		);
 	}
 	
@@ -111,7 +105,7 @@ class Menu {
 			this.selectedShelf = this.shelf[index];
 			let description = "Shelf Name: " + this.selectedShelf.name + "\n";
 			for (let i = 0; i < this.selectedShelf.book.length; i++) {
-				description += i + ") " + this.selectedShelf.book[i].name + " - " this.selectedShelf.book[i].//position + "/n";
+				description += i + ") " + this.selectedShelf.book[i].title + " - " + this.selectedShelf.book[i].author + " - " + this.selectedShelf.book[i].description + "/n";
 			}
 // what is the difference between players, teams, and player; or in my case, books, shelves and ...? just trying to make sure I got everything properly sorted out.
 			let selection = this.showShelfMenuOptions(description);
@@ -120,17 +114,17 @@ class Menu {
 				case "1":
 					this.createBook();
 					break;
-				case "2";
+				case "2":
 					this.deleteBook();
 					break;
-				case "3";
+				case "3":
 					this.listBooks();
 					break;
-				case "4";
+				case "4":
 			}
 		}
 	}
 }
 
-let menu = newMenu;
+let menu = new Menu;
 menu.start();
