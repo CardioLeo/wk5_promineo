@@ -6,6 +6,8 @@
 
 // players = books
 // teams = shelves
+
+
 class Book {
 	constructor(title, author, description) {
 		this.title = title;
@@ -68,25 +70,25 @@ class Menu {
 	}
 	
 	showMainMenuOptions() {
-		return prompt("
-			0) exit
-			1) create new shelf
-			2) view shelf
-			3) delete shelf
-			4) display all shelves
-		");
+		return prompt(
+			"0) exit" + "\n" +
+			"1) create new shelf" + "\n" +
+			"2) view shelf" + "\n" + 
+			"3) delete shelf" + "\n" +
+			"4) display all shelves"
+			);
 	}
 	showShelfMenuOptions() {
-		return prompt("
-			0) back
-			1) create book
-			2) delete book
-			3) list books
-			4) list books with descriptions
-			5) list book description
-			---------------
-			${shelfInfo}
-		");
+		return prompt(
+			"0) back" + "\n" +
+			"1) create book" + "\n" +
+			"2) delete book" + "\n" +
+			"3) list books" + "\n" +
+			"4) list books with descriptions" + "\n" +
+			"5) list book description" + "\n" +
+			"---------------" + "\n" +
+			"${shelfInfo}";
+		);
 	}
 	
 	displayShelves() {
