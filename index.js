@@ -66,8 +66,6 @@ class Menu {
 			}
 			selection = this.showMainMenuOptions();
 		}
-		
-
 		alert("Goodbye!");
 	}
 	
@@ -81,6 +79,7 @@ class Menu {
 			);
 	}
 	showShelfMenuOptions() {
+		// this prompt doesn't seem to work. 
 		let menuPrompt = "0) back\n1) create book\n2) delete book\n3) list books\n4) list books with descriptions\n5) list descriptions\n---------------\n\${shelfInfo}";
 		return prompt(
 			menuPrompt
@@ -109,7 +108,7 @@ class Menu {
 			for (let i = 0; i < this.selectedShelf.book.length; i++) {
 				description += i + ") " + this.selectedShelf.book[i].title + " - " + this.selectedShelf.book[i].author + " - " + this.selectedShelf.book[i].description + "/n";
 			}
-// what is the difference between players, teams, and player; or in my case, books, shelves and ...? just trying to make sure I got everything properly sorted out.
+// this command doesn't seem to work yet;
 			let selection = this.showShelfMenuOptions(description);
 			switch(selection) {
 			// this selection is different from the other menu option
@@ -157,6 +156,7 @@ class Menu {
 	listBooks() {
 		// let index = prompt("Enter the index of the author you wish you list: ");
 		// if (index )
+		// these three commands aren't written yet;
 	}
 	listDescriptions() {
 		// let index = prompt("Enter the index of the author you wish you list: ");
