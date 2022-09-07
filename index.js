@@ -24,6 +24,7 @@ class Shelf {
 	this.name = name;
 	this.position = position;
 	this.shelf = [];
+	// line 26 here, this.shelf = []; is identical to line 43, this.shelf = []; is that wrong?
 	}
 	addBook(book) {
 		if (book instanceof Book) {
@@ -88,7 +89,7 @@ class Menu {
 	displayShelves() {
 		let shelfString = "";
 		for (let i = 0; i < this.shelf.length; i++) {
-			shelfString += i + ") " + this.shelf[i].name + "\n";
+			shelfString += i + ") " + this.shelf[i].title + "\n";
 		}
 		alert(shelfString);
 	}
@@ -101,7 +102,7 @@ class Menu {
 	viewShelf() {
 		let index = prompt("Enter the index of the shelf you wish to view: ");
 		// this loop is to validate input so input does not create errors
-		if (index > -1 && index < this.teams.length) {
+		if (index > -1 && index < this.shelf.length) {
 			this.selectedShelf = this.shelf[index];
 			let description = "Shelf Name: " + this.selectedShelf.name + "\n";
 			for (let i = 0; i < this.selectedShelf.book.length; i++) {
@@ -111,6 +112,9 @@ class Menu {
 			let selection = this.showShelfMenuOptions(description);
 			switch(selection) {
 			// this selection is different from the other menu option
+				//case "1":
+				//	this.back();
+				//	break;
 				case "1":
 					this.createBook();
 					break;
@@ -121,9 +125,47 @@ class Menu {
 					this.listBooks();
 					break;
 				case "4":
+					this.listBooksWDescriptions();
+					break;
+				case "5":
+					this.listAuthors();
+					break;
+				default:
+					selection = 0;
 			}
 		}
 	}
+	deleteShelf(){
+		let index = prompt("Enter the index of the shelf you wish to delete: ");
+		if (index > -1 && index < this.shelf.length) {
+			this.shelf.splice(index, 1);
+		}
+	}
+	createBook() {
+		let title = prompt("Enter title for new book: ");
+		let author = prompt("Enter author for new book: ");
+		let description = prompt("Enter description for new book: ");
+		this.selectedShelf.shelf.push(new Book(title, author, description));
+	}
+	deleteBook() {
+		let index = prompt("Enter the index of the book you wish to delete: ");
+		if (index > -i && index < this.selectedShelf.shelf.length) {
+			this.selectedShelf.shelf.splice(index, 1);
+		}
+	}
+	listBooks() {
+		// let index = prompt("Enter the index of the author you wish you list: ");
+		// if (index )
+	}
+	listBooksWDescriptions() {
+		// let index = prompt("Enter the index of the author you wish you list: ");
+		// if (index )
+	}
+	listAuthors() {
+		// let index = prompt("Enter the index of the author you wish you list: ");
+		// if (index)
+	}
+	//0) back\n1) create book\n2) delete book\n3) list books\n4) list books with descriptions\n5) list book description
 }
 
 let menu = new Menu;
