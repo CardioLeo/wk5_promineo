@@ -81,8 +81,9 @@ class Menu {
 			);
 	}
 	showShelfMenuOptions() {
+		let menuPrompt = "0) back\n1) create book\n2) delete book\n3) list books\n4) list books with descriptions\n5) list descriptions\n---------------\n\${shelfInfo}";
 		return prompt(
-			`0) back\n1) create book\n2) delete book\n3) list books\n4) list books with descriptions\n5) list book description\n---------------\n\${shelfInfo}`
+			menuPrompt
 		);
 	}
 	
@@ -157,7 +158,7 @@ class Menu {
 		// let index = prompt("Enter the index of the author you wish you list: ");
 		// if (index )
 	}
-	listBooksWDescriptions() {
+	listDescriptions() {
 		// let index = prompt("Enter the index of the author you wish you list: ");
 		// if (index )
 	}
