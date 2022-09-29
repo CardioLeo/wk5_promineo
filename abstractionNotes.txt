@@ -1,0 +1,22 @@
+# Author: William Z Chadwick
+# Date Created: 09/28/2022
+# Date Modified: 09/28/2022
+
+---
+
+Some notes on abstraction from various sources.
+
+---
+
+Here, notes from some C++ Interview Questions and suggested answers from a pdf resource by written by InterviewBit.
+
+
+What do you mean by abstraction in C++?
+
+Abstraction is the process of showing the essential details to the user and hiding the details which we don’t want to show to the user or hiding the details which are irrelevant to a particular user.
+
+What is an abstract class and when do you use it?
+
+A class is called an abstract class whose objects can never be created. Such a class exists as a parent for the derived classes. We can make a class abstract by placing a pure virtual function in the class.
+
+---
