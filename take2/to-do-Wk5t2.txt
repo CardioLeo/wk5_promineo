@@ -1,0 +1,38 @@
+# Author:
+# Date Created:
+# Date Modified:
+# Description:
+
+---
+
+Week 5!!
+
+-Find secondary resources
+-Watch the Week 5 videos again and again
+--make notes of video
+// -Make notes for the requirements for the coding project
+-Memorize the requirements
+
+---
+
+Requirements:
+
+Create Menu App "As Seen In Video"
+[take notes on video]
+
+Use at least one array
+
+Use at least two classes
+
+Your menu should have the options to
+-create,
+-view, and
+-delete elements
+
+Runs as Directed
+
+[Screenshots of all required functionality]
+
+[url]
+
+Feedback
