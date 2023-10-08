@@ -1,19 +1,24 @@
-# Author:
-# Date Created:
-# Date Modified:
-# Description:
+# Author: William Z Chadwick
+# Date Created: null
+# Date Modified: 06/14/2023
+# Description: To do list for PromineoTech front end bootcamp, week 5, take 2
 
 ---
 
 Week 5!!
 
 -Find secondary resources
--Watch the Week 5 videos again and again
+[on CSS??]
+///-Watch the Week 5 videos again and again
 --make notes of video
-// -Make notes for the requirements for the coding project
+/// -Make notes for the requirements for the coding project
 -Memorize the requirements
+-make new notes for the requirements for the coding project
+-print out all the coding project specification pages!
 
 ---
+
+[Summary of requirements]
 
 Requirements:
 
@@ -21,6 +26,7 @@ Create Menu App "As Seen In Video"
 [take notes on video]
 
 Use at least one array
+[use key-value pairs]
 
 Use at least two classes
 

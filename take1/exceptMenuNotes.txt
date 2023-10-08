@@ -1,0 +1,110 @@
+# Author: William Z Chadwick
+# Date Created: 09/06/2022
+# Date Modified: 09/06/2022
+# Description: 
+
+try block
+catch block
+
+catch block catches errors from try block
+
+list.push('hello');
+console.log('goodbye');
+
+when run, goodbye never gets logged because the error is thrown trying to get pushed to an array that doesn't exist. error, exception thrown.
+
+So how do we get the program to continue even if error.
+
+Try and Catch blocks.
+
+try {
+	list.push('hello');
+	console.log('goodbye');
+} catch(err) {
+	console.log(err)
+}
+
+/// or
+
+try {
+	list.push('hello');
+} catch (err) {
+	console.log(err);
+}
+
+console.log('goodbye');
+
+finally block runs whether there is an error thrown or not.
+
+finally {}
+
+this is for handling exceptions for libraries outside of our code, outside of our control;
+
+end of video for exception handling;
+
+---
+
+beginning of notes and video for js menu app;
+
+menu driven app;
+
+class player {
+	constructor(name, position)
+		this.name = name;
+		this.position = position;
+	}
+
+	describe() {
+		return `${this.name} plays ${this.position}.`;
+}
+
+class Team {
+	constructor(name) {
+		this.name = name;
+		this.players = [];
+	}
+	addPlayer(player) {
+		if (player instanceof Player) {
+			
+		}
+	}
+}
+
+---
+
+day three
+
+class Player {
+	constructor(name, position) {
+		this.name = name;
+		this.position = position;
+	}
+	describe() {
+		return "${this.name} plays ${this.position}.";
+	}
+}
+
+class Team {
+	constructor(name) {
+		this.name = name;
+		this.players = [];
+	}
+	addPlayer(player) {
+		if (player instanceof Player) {
+			this.players.push(player);
+		} else {
+			throw new Error("You can only add an instance of Player. Argument is not a player: ${player} ")
+		}                                                                                             
+	}
+	describe() {
+		return "${this.name} has ${this.players.length} players.";
+	}
+}
+
+class Menu {
+	constructor() {
+		this.teams = [];
+		this.selectedTeam = null;
+	}
+
+}
