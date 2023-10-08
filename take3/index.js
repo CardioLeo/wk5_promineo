@@ -59,13 +59,11 @@ class Menu {
 		alert('Goodbye!');
 	}
 	showMainMenuOptions() {
-		return prompt('
-			0) exit
-			1) create new shelf
-			2) view shelf
-			3) delete shelf
-			4) display all shelves
-		');
+		return prompt("0) exit \n1) create new shelf \n2) view shelf \n3) delete shelf \n4) display all shelves \n");
+	}
+
+	showShelfMenuOptions() {
+		return prompt("0) back\n1) create book\n2) delete book\n ------------------------ \n${shelfInfo} ");
 	}
 
 	displayShelves() {
@@ -88,8 +86,20 @@ class Menu {
 			let description = 'Shelf Description: ' + this.selectedShelf.shelf + '\n';
 
 			for (let i = 0; i < this.selectedShelf.books.length; i++) {
-				description += i + ') ' + this.selectedShelf.shelf[i].title = '\n';
+				description += i + ') ' + this.selectedShelf.shelf[i].title + '\n';
 			}
+		}
+		let selection = this.showShelfMenuOptions(description);
+		switch (selection) {
+			case '1':
+				this.createBook();
+				break;
+			case '2':
+				this.deleteBook();
 		}
 	}
 }
+
+let menu = new Menu();
+
+menu.start();
