@@ -85,16 +85,6 @@ class Menu {
 		alert(shelfString);
 	}
 
-        deleteShelf() {
-		// doesn't work
-		// copied the following and modified it from the delete book function defined below
-                let index = prompt('Enter the index of the shelf you wish to delete: ');
-                if (index > -1 && index < this.shelves.length) {
-         		this.selectedShelf = this.shelves[index];
-			this.selectedShelf.splice(index, 1);
-                }
-        }
-
 
 	createShelf() {
 		let shelf = prompt('Enter a topic for this new shelf:')
@@ -137,6 +127,12 @@ class Menu {
 		alert('Back up to the main menu, now...')
 		// works
 	}
+        deleteShelf() {
+                let index = prompt('Enter the index of the shelf you wish to delete: ');
+                if (index > -1 && index < this.shelves.length) {
+                        this.shelves.splice(index, 1);
+                }
+        }
 	addBook() {
 		// appears to work
 		let title = prompt('Enter title for new book: ');
@@ -147,7 +143,7 @@ class Menu {
 	deleteBook() {
 		// unclear if works because prompt doesn't show the ${shelfInfo} var
 		let index = prompt('Enter the index of the book you wish to delete: ');
-		if (index < -1 && index < this.selectedShelf.books.length) {
+		if (index > -1 && index < this.selectedShelf.books.length) {
 			this.selectedShelf.books.splice(index, 1);
 		}
 	}
