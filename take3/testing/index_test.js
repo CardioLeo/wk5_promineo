@@ -157,7 +157,7 @@ class Menu {
 	addBook() {
 		// appears to work
 		let title = prompt('Enter title for new book: ');
-		let author = prompt('Enter author for new book: ');
+		// let author = prompt('Enter author for new book: ');
 		// let progress = prompt('Enter percentage of progress made through book: ');
 		this.selectedShelf.books.push(new Book(title, name)); //, progress));
 	}
