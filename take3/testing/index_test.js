@@ -47,7 +47,7 @@ class Menu {
 					break; // works
 				case '2':
 					this.viewShelf();
-					break; // not yet working
+					break; // now much more in working order
 				case '3':
 					this.deleteShelf();
 					break; // not yet working?
@@ -60,7 +60,7 @@ class Menu {
 			selection = this.showMainMenuOptions();
 		}
 		alert('Goodbye!');
-	}
+}
 	showMainMenuOptions() {
 		return prompt("0) exit \n1) create new shelf \n2) view shelf \n3) delete shelf \n4) display all shelves \n");
 		// doesn't work if each line of the prompt is on a different line in the js doc;
@@ -71,6 +71,7 @@ class Menu {
 		return prompt("0) back\n1) create book\n2) delete book\n3) describe book\n------------------------ \n${shelfInfo} ");
 	}
 	// shelfInfo variable is not showing anthing other than the string literal "${shelfInfo}"
+	// has ${shelfInfo} even been defined anywhere? I can't find it just now...
 
 	displayShelves() {
 		let shelfString = '';
@@ -90,11 +91,6 @@ class Menu {
 		this.shelves.push(new Shelf(shelf));
 		// works
 	}
-
-	// Something in viewShelf() is not working?
-	// When viewShelf gives the prompt: "Enter the index of the shelf you wish to view: " nothing happens.
-	// What should it return instead? Shouldn't it be a prompt to create books for that shelf or a statement
-	// saying that so far there are not books on that shelf?
 
 	viewShelf() {
 		let index = prompt('Enter the index of the shelf you wish to view: ');
@@ -116,8 +112,6 @@ class Menu {
 			}
 		}
 		let selection = this.showShelfMenuOptions();
-		// does this work? ought it to be a prompt instead? Or it is just saying, the selection is ultimately
-		// the description as just defined in the lines directly above?
 		while (selection != 0) {
 			switch (selection) {
 				case '1':
@@ -134,6 +128,7 @@ class Menu {
 			selection = this.showShelfMenuOptions();
 		}
 		alert('Back up to the main menu, now...')
+		// works
 	}
 }
 
