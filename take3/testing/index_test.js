@@ -150,10 +150,10 @@ class Menu {
                 let booksString = '';
 		let theseBooks = this.selectedShelf.books;
                 for (let i = 0; i < theseBooks.length; i++) {
-			booksString += i + ') ' + theseBooks[i].title + ' written by ' + theseBooks[i].author + '\n'; //' and I am ' theseBooks[i].progress + ' percent of the way through the book.' + '\n';
+			booksString += i + ') ' + theseBooks[i].title + ' written by ' + theseBooks[i].author + '\n';
+			// ' and I am ' theseBooks[i].progress + ' percent of the way through the book.' + '\n';
                 }
                 alert(booksString);
-                // alert(booksString);
         }
 
 
@@ -161,11 +161,11 @@ class Menu {
 		// appears to work
 		let title = prompt('Enter title for new book: ');
 		let author = prompt('Enter author for new book: ');
-		let progress = prompt('Enter percentage of progress made through book: ');
-		this.selectedShelf.books.push(new Book(title, name, progress));
+		// let progress = prompt('Enter percentage of progress made through book: ');
+		this.selectedShelf.books.push(new Book(title, name)); //, progress));
 	}
 	deleteBook() {
-		// unclear if works because prompt doesn't show the ${shelfInfo} var
+		// appears to work
 		let index = prompt('Enter the index of the book you wish to delete: ');
 		if (index > -1 && index < this.selectedShelf.books.length) {
 			this.selectedShelf.books.splice(index, 1);
