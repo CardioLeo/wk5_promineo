@@ -1,13 +1,14 @@
 class Book {
 	constructor(title, author, progress) {
 		this.title = title;
-		this.author = author;
-		this.progress = progress;
+//		this.author = author;
+//		this.progress = progress;
 	}
 
+	/*
 	describeBook() {
 		return '${this.title} is written by ${this.author}. I am ${this.progress}% through the book.';
-	}
+	}*/
 }
 
 class Shelf {
@@ -16,14 +17,16 @@ class Shelf {
 		this.books = [];
 	}
 
-	addBook(book) {
+/*	addBook(book) {
 		if (book instanceof Book) {
 			this.books.push(book) // was originally this.shelf.push(book) -- we'll see if this fixes it
 		} else {
 			throw new Error('You can only add an instance of the Book class. Argument is not a Book: ${book}');
 		}
-	}	
-// earlier location of	displayBooks()
+	}
+*/	
+
+	// earlier location of	displayBooks()
 	displayBooks() {
                 let booksString = '';
                 for (let i = 0; i < this.books.length; i++) {
@@ -34,11 +37,11 @@ class Shelf {
         }
 
 
-	describeShelf() {
+	/*describeShelf() {
 		// just now I changed this.shelves.length to this.books.length
 		return 'This shelf has ' + this.shelves.length + '  books.';
 		// let shelfInfo = console.log("The topic of this shelf is ${shelf} and this shelf has ${this.books.length} many books.")
-	}	
+	}*/	
 }
 
 class Menu {
@@ -80,13 +83,7 @@ class Menu {
 
 	showShelfMenuOptions(booksString) {
 		return prompt('0) back\n1) create book\n2) delete book\n3) display books\n------------------------ \n');
-			// + this.shelf.displayBooks(booksString);
-		// got rid of ${shelfInfo} at the end of this return prompt; replaced it with booksString
 	}
-	// shelfInfo variable is not showing anthing other than the string literal "${shelfInfo}"
-	// has ${shelfInfo} even been defined anywhere? I can't find it just now... That var and 
-	// the var description apparently are not sufficiently defined. thought technically
-	// description is defined within viewShelf().
 
 	displayShelves() {
 		let shelfString = '';
@@ -108,18 +105,13 @@ class Menu {
 		let index = prompt('Enter the index of the shelf you wish to view: ');
 		if (index > -1 && index < this.shelves.length) {
 			this.selectedShelf = this.shelves[index];
+			/*
 			let description = 'Shelf Description: ' + this.selectedShelf.shelf + '\n';
 			for (let i = 0; i < this.selectedShelf.books.length; i++) {
 				description += i + ') ' + this.selectedShelf.shelf[i].title + ' written by ' + this.selectedShelf.books[i].author
 				 + ' for which I am ' + this.selectedShelf.books[i].progress + ' percent through the book.' + '\n';
-			}
-		} else {
-                	alert('This shelf does not exist!')
-			// added this just now, not original to PromineoTech outline
-			// two problems: 1, after the alert, the team info page still displays,
-			// but if the team doesn't exist, it shouldn't display
-			// 		 2, ...I'm trying to figure out why that is
-		}
+			
+			}*/
 		let selection = this.showShelfMenuOptions() // add description as parameter later!
 		while (selection != 0) {
 			switch (selection) {
@@ -136,6 +128,11 @@ class Menu {
 			}
 			selection = this.showShelfMenuOptions();
 		}
+		                } else {
+                        alert('This shelf does not exist!')
+				// fixed bug where menu showed after alert! then error was thrown bc it showed a menu for a
+				// nonexistent shelf; now it now longer does that
+                }
 		alert('Back up to the main menu, now...')
 		// works
 	}
@@ -150,7 +147,7 @@ class Menu {
                 let booksString = '';
 		let theseBooks = this.selectedShelf.books;
                 for (let i = 0; i < theseBooks.length; i++) {
-			booksString += i + ') ' + theseBooks[i].title + ' written by ' + theseBooks[i].author + '\n';
+			booksString += i + ') ' + theseBooks[i].title + '\n'; // + ' written by ' + theseBooks[i].author + '\n';
 			// ' and I am ' theseBooks[i].progress + ' percent of the way through the book.' + '\n';
                 }
                 alert(booksString);
