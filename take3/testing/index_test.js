@@ -5,7 +5,7 @@ class Book {
 		this.progress = progress;
 	}
 
-	describe() {
+	describeBook() {
 		return '${this.title} is written by ${this.author}. I am ${this.progress}% through the book.';
 	}
 }
@@ -18,17 +18,26 @@ class Shelf {
 
 	addBook(book) {
 		if (book instanceof Book) {
-			this.shelf.push(book)
+			this.books.push(book) // was originally this.shelf.push(book) -- we'll see if this fixes it
 		} else {
 			throw new Error('You can only add an instance of the Book class. Argument is not a Book: ${book}');
 		}
-	}
-	deleteBook() {
-		return 'nothing in the delete book function yet!';
-	}
-	describe() {
+	}	
+// earlier location of	displayBooks()
+	displayBooks() {
+                let booksString = '';
+                for (let i = 0; i < this.books.length; i++) {
+                        booksString += i + ') ' + this.books[i].book + '\n';
+                }
+		return(booksString);
+                // alert(booksString);
+        }
+
+
+	describeShelf() {
 		// just now I changed this.shelves.length to this.books.length
-		return '${this.shelf} has ${this.books.length} books.';
+		return 'This shelf has ' + this.shelves.length + '  books.';
+		// let shelfInfo = console.log("The topic of this shelf is ${shelf} and this shelf has ${this.books.length} many books.")
 	}	
 }
 
@@ -69,8 +78,10 @@ class Menu {
 		// ohhhh, he said "template literals." The reason why the template literals don't work is because they require backtics `` and I was using single quotes ''
 	}
 
-	showShelfMenuOptions(shelfInfo) {
-		return prompt("0) back\n1) create book\n2) delete book\n3) describe book\n------------------------ \n${shelfInfo} ");
+	showShelfMenuOptions(booksString) {
+		return prompt('0) back\n1) create book\n2) delete book\n3) describe book\n------------------------ \n');
+			// + this.shelf.displayBooks(booksString);
+		// got rid of ${shelfInfo} at the end of this return prompt; replaced it with booksString
 	}
 	// shelfInfo variable is not showing anthing other than the string literal "${shelfInfo}"
 	// has ${shelfInfo} even been defined anywhere? I can't find it just now... That var and 
@@ -83,6 +94,7 @@ class Menu {
 			shelfString += i + ') ' + this.shelves[i].shelf + '\n';
 		}
 		alert(shelfString);
+		// works
 	}
 
 
@@ -118,7 +130,8 @@ class Menu {
 					this.deleteBook();
 					break;
 				case '3':
-					this.describe();
+					// this.displayBooks();
+					this.displayBooks();
 				default:
 					selection = 0;
 			}
@@ -133,6 +146,17 @@ class Menu {
                         this.shelves.splice(index, 1);
                 }
         }
+
+	        displayBooks() {
+                let booksString = '';
+                for (let i = 0; i < this.selectedShelf.books.length; i++) {
+                        booksString += i + ') ' + this.selectedShelf.books[i].book + '\n';
+                }
+                return(booksString);
+                // alert(booksString);
+        }
+
+
 	addBook() {
 		// appears to work
 		let title = prompt('Enter title for new book: ');
