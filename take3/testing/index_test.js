@@ -27,7 +27,8 @@ class Shelf {
 		return 'nothing in the delete book function yet!';
 	}
 	describe() {
-		return '${this.shelf} has ${this.shelf.length} books.';
+		// just now I changed this.shelves.length to this.books.length
+		return '${this.shelf} has ${this.books.length} books.';
 	}	
 }
 
@@ -39,7 +40,6 @@ class Menu {
 
 	start() {
 		let selection = this.showMainMenuOptions();
-		
 		while (selection != 0) {
 			switch (selection) {
 				case '1':
@@ -65,26 +65,36 @@ class Menu {
 		return prompt("0) exit \n1) create new shelf \n2) view shelf \n3) delete shelf \n4) display all shelves \n");
 		// doesn't work if each line of the prompt is on a different line in the js doc;
 		// thus I have used the \n escape characters
+		// ...
+		// ohhhh, he said "template literals." The reason why the template literals don't work is because they require backtics `` and I was using single quotes ''
 	}
 
 	showShelfMenuOptions(shelfInfo) {
 		return prompt("0) back\n1) create book\n2) delete book\n3) describe book\n------------------------ \n${shelfInfo} ");
 	}
 	// shelfInfo variable is not showing anthing other than the string literal "${shelfInfo}"
-	// has ${shelfInfo} even been defined anywhere? I can't find it just now...
+	// has ${shelfInfo} even been defined anywhere? I can't find it just now... That var and 
+	// the var description apparently are not sufficiently defined. thought technically
+	// description is defined within viewShelf().
 
 	displayShelves() {
 		let shelfString = '';
-		// Here, this.shelves.length refers to the this.shelves = [] array created in the Menu Object constructor
-		// the following loop loops through all the shelves in the array, while i is less than the number of
-		// shelves in the array (.length).
-		// Each loop through the array concatenates the shelfString variable, adding a new closing parenthesis,
-		// a space, and the next value of i in the array of shelves, plus a new line escape character.
 		for (let i = 0; i < this.shelves.length; i++) {
 			shelfString += i + ') ' + this.shelves[i].shelf + '\n';
 		}
 		alert(shelfString);
 	}
+
+        deleteShelf() {
+		// doesn't work
+		// copied the following and modified it from the delete book function defined below
+                let index = prompt('Enter the index of the shelf you wish to delete: ');
+                if (index > -1 && index < this.shelves.length) {
+         		this.selectedShelf = this.shelves[index];
+			this.selectedShelf.splice(index, 1);
+                }
+        }
+
 
 	createShelf() {
 		let shelf = prompt('Enter a topic for this new shelf:')
@@ -94,24 +104,21 @@ class Menu {
 
 	viewShelf() {
 		let index = prompt('Enter the index of the shelf you wish to view: ');
-		// The above line makes index receive the value from prompt.
-		// The next line's conditional makes sure that the value of the shelf to be viewed is not less than the
-		// minumum of the array of shelves, nor more than the whole length of the array.
 		if (index > -1 && index < this.shelves.length) {
 			this.selectedShelf = this.shelves[index];
-			// A helpful variable to save the index in... perhaps a bit more readable than
-			// "this.shelves[index].shelf" as is used in the next line:
-			let description = 'Shelf Description: ' + this.selectedShelf.shelf.title + '\n';
-			// Actually, yes, this following for loop is definitely clearer because it has the (otherwise
-			// seemingly redundant variables, "description" and selectedShelf).
-			// Still something is wrong right here in this code; it doesn't know what to display if there are no books, and it may not be correctly accessing individual shelves; what ought it to display for an empty shelf? Shouldn't it be a menu?
-			// I think I just got it to work by removing "description" from the parameters o the "let selection =" statement below
+			let description = 'Shelf Description: ' + this.selectedShelf.shelf + '\n';
 			for (let i = 0; i < this.selectedShelf.books.length; i++) {
-				description += i + ') ' + this.selectedShelf.shelf[i].title + '\n';
-			// I feel that this for loop should work...
+				description += i + ') ' + this.selectedShelf.shelf[i].title + ' written by ' + this.selectedShelf.books[i].author
+				 + ' for which I am ' + this.selectedShelf.books[i].progress + ' percent through the book.' + '\n';
 			}
+		} else {
+                	alert('This shelf does not exist!')
+			// added this just now, not original to PromineoTech outline
+			// two problems: 1, after the alert, the team info page still displays,
+			// but if the team doesn't exist, it shouldn't display
+			// 		 2, ...I'm trying to figure out why that is
 		}
-		let selection = this.showShelfMenuOptions();
+		let selection = this.showShelfMenuOptions() // add description as parameter later!
 		while (selection != 0) {
 			switch (selection) {
 				case '1':
@@ -129,6 +136,20 @@ class Menu {
 		}
 		alert('Back up to the main menu, now...')
 		// works
+	}
+	addBook() {
+		// appears to work
+		let title = prompt('Enter title for new book: ');
+		let author = prompt('Enter author for new book: ');
+		let progress = prompt('Enter percentage of progress made through book: ');
+		this.selectedShelf.books.push(new Book(title, name, progress));
+	}
+	deleteBook() {
+		// unclear if works because prompt doesn't show the ${shelfInfo} var
+		let index = prompt('Enter the index of the book you wish to delete: ');
+		if (index < -1 && index < this.selectedShelf.books.length) {
+			this.selectedShelf.books.splice(index, 1);
+		}
 	}
 }
 
