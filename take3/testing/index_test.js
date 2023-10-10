@@ -79,7 +79,7 @@ class Menu {
 	}
 
 	showShelfMenuOptions(booksString) {
-		return prompt('0) back\n1) create book\n2) delete book\n3) describe book\n------------------------ \n');
+		return prompt('0) back\n1) create book\n2) delete book\n3) display books\n------------------------ \n');
 			// + this.shelf.displayBooks(booksString);
 		// got rid of ${shelfInfo} at the end of this return prompt; replaced it with booksString
 	}
@@ -130,7 +130,6 @@ class Menu {
 					this.deleteBook();
 					break;
 				case '3':
-					// this.displayBooks();
 					this.displayBooks();
 				default:
 					selection = 0;
@@ -147,12 +146,13 @@ class Menu {
                 }
         }
 
-	        displayBooks() {
+	displayBooks() {
                 let booksString = '';
-                for (let i = 0; i < this.selectedShelf.books.length; i++) {
-                        booksString += i + ') ' + this.selectedShelf.books[i].book + '\n';
+		let theseBooks = this.selectedShelf.books;
+                for (let i = 0; i < theseBooks.length; i++) {
+			booksString += i + ') ' + theseBooks[i].title + ' written by ' + theseBooks[i].author + '\n'; //' and I am ' theseBooks[i].progress + ' percent of the way through the book.' + '\n';
                 }
-                return(booksString);
+                alert(booksString);
                 // alert(booksString);
         }
 
