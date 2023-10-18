@@ -172,28 +172,54 @@ class Menu {
 			shelfString += i + ') ' + this.shelves[i].shelf + '\n';
 		}
 		alert(shelfString);
-		// works
 	}
+
+// The method, displayShelves(), has 3 main elements. First is a variabl
+// declaration of an empty string. The next is a for loop which loops
+// over the shelves array (but a specific instance of the class, Shelf),
+// adding a closing parenthesis, each shelf title, and a new line (in
+// that order) for each item in the array, until there are no more items.
+// 
 
 
 	createShelf() {
 		let shelf = prompt('Enter a topic for this new shelf:')
 		this.shelves.push(new Shelf(shelf));
-		// works
 	}
+
+// The method, createShelf(), has 2 main elements. First is a variable,
+// "shelf" - this variable holds the value returned by a prompt function,
+// which itself gains that value by waiting for user input. Thus, the
+// variable holds user input. In particular, the prompt gives the
+// message that in turn gives the variable meaning for the user - namely,
+// it uses the input for name a topic for a given shelf.
+//
+// The second element of this function is a method call from the array
+// "shelves" belonging to "this.shelves". If I understand my own code,
+// "this.shelves" is an array belonging to an instance of the Menu class.
+// The method, then, takes the user input from the first element of the
+// createShelf() method and then pushes it to the shelves array with
+// that input as a parameter. The input as parameter becomes effectively
+// the name of the new instance of the Shelf class on the "this.shelves"
+// array.
+//
+// In other words, in a great deal more words than the code itself
+// contains, this method does what it's name says - it creates a new
+// instance of a shelf.
+//
 
 	viewShelf() {
 		let index = prompt('Enter the index of the shelf you wish to view: ');
 		if (index > -1 && index < this.shelves.length) {
 			this.selectedShelf = this.shelves[index];
 		let selection = this.showShelfMenuOptions()
-			// if I like, I may add description as parameter
-			// later, as was shown in the original videos;
-			// however, I was struggling to get var description
-			// passed to the function I wanted to use it in,
-			// and I decided that I had achieved tight enough
-			// functionality without getting that working,
-			// so I omitted that feature for now.
+
+// If I like, I may add "description" as parameter later, as was shown in
+// the original videos; however, I was struggling to get "description"
+// passed to the function I wanted to use it in, and I decided that I
+// had achieved tight enough functionality without getting that working,
+// so I omitted that feature for now.
+
 		while (selection != 0) {
 			switch (selection) {
 				case '1':
@@ -213,8 +239,29 @@ class Menu {
                         alert('This shelf does not exist!')
                 }
 		alert('Back up to the main menu, now...')
-		// works
 	}
+
+// The viewShelf() method also does what it says, like the previous
+// method and like any good abstraction. This method has a lot more
+// elements than the previous one, though.
+// 
+// First, again, is a variable declaration; then an if statement
+// (technically an if-else statement, but you have to read a bit to
+// find the brief else); and finally two alerts. But that's not all!
+// Because inside the if statement are: two assignment statements, a
+// while loop (containing switch statements), then finally another
+// assignment statement.
+//
+// The first variable declaration is another variable receiving its
+// value from user input via the prompt function. This input is then
+// bound to the "index" variable. This variable will be used in the
+// switch statements within the while loop. The alert, inside the else
+// part of the if-else statement, is for when someone tries to input an
+// index for a shelf that does not exist (as it says).
+//
+// 
+//
+
         deleteShelf() {
                 let index = prompt('Enter the index of the shelf you wish to delete: ');
                 if (index > -1 && index < this.shelves.length) {
